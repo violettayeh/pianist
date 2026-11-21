@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Violetta Yeh — Pianist · Collaborative Artist · Educator</title>
+<meta name="description" content="Official website of Violetta Yeh — pianist, collaborative artist and music educator based in London and Paris.">
+<meta property="og:title" content="Violetta Yeh — Pianist · Collaborative Artist · Educator">
+<meta property="og:description" content="Pianist, collaborative artist and music educator based in London and Paris.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="portrait.png">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Noto+Serif+TC:wght@200;300;400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#1A1008;
+  --surface:#201408;
+  --gold:#C4AE82;
+  --gold-light:#D6C9A8;
+  --caramel:#A8906A;
+  --heading:#B8936A;
+  --wine:#6B2130;
+  --wine-light:#8B3445;
+  --text-body:#E8DDD0;
+  --text-muted:#BFB09E;
+  --text-sub:#8A7D6E;
+  --border:rgba(196,174,130,.14);
+  --border-wine:rgba(107,33,48,.22);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--text-body);font-family:'Montserrat',sans-serif;font-weight:300;overflow-x:hidden;cursor:none;}
+body.menu-open{overflow:hidden;}
+.zh{font-family:'Noto Serif TC',serif;font-weight:300;}
+.zh-thin{font-family:'Noto Serif TC',serif;font-weight:200;}
+
+body.lang-en .zh{display:none!important;}
+body.lang-en .zh-thin{display:none!important;}
+body.lang-zh .en{display:none!important;}
+
+.cursor{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .15s ease;opacity:.6;}
+@media(hover:none){body{cursor:auto;}.cursor,.cursor-ring{display:none;}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:26px 60px;display:flex;justify-content:space-between;align-items:center;transition:background .3s;}
+nav::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,16,8,.97) 0%,transparent 100%);pointer-events:none;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.05rem;letter-spacing:.32em;color:var(--gold);text-decoration:none;position:relative;z-index:1;}
+.nav-right{display:flex;gap:30px;align-items:center;list-style:none;position:relative;z-index:1;}
+.nav-right>li>a{color:var(--text-body);text-decoration:none;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;opacity:.8;transition:opacity .3s,color .3s;padding-bottom:5px;border-bottom:1px solid transparent;}
+.nav-right>li>a:hover{opacity:1;color:var(--gold);}
+.nav-right>li>a.current{opacity:1;color:var(--gold);border-bottom-color:var(--wine-light);}
+.lang-btn,.menu-btn{background:none;border:1px solid rgba(196,174,130,.35);color:var(--gold);font-family:'Montserrat',sans-serif;font-size:.58rem;letter-spacing:.18em;padding:5px 13px;cursor:pointer;transition:border-color .3s,background .3s;}
+.lang-btn:hover,.menu-btn:hover{border-color:var(--gold);background:rgba(196,174,130,.07);}
+.menu-li{display:none;}
+.zh,.zh-thin,.lang-btn{display:none!important;}
+
+.menu-overlay{position:fixed;inset:0;z-index:90;background:rgba(26,16,8,.985);display:flex;flex-direction:column;justify-content:center;padding:0 40px;opacity:0;pointer-events:none;transition:opacity .4s ease;}
+.menu-overlay.open{opacity:1;pointer-events:auto;}
+.menu-overlay a{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:300;font-style:italic;color:var(--heading);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--border-wine);transition:color .3s,padding-left .3s;}
+.menu-overlay a .zh{font-family:'Noto Serif TC',serif;font-style:normal;font-size:1.9rem;}
+.menu-overlay a:hover,.menu-overlay a.current{color:var(--gold);padding-left:8px;}
+
+/* PAGES */
+.page{display:none;}
+.page.active{display:block;animation:pageIn .8s ease;}
+@keyframes pageIn{from{opacity:0;}to{opacity:1;}}
+.subpage>section:first-of-type{padding-top:170px;}
+
+/* HERO */
+.hero{height:100vh;min-height:620px;position:relative;display:grid;grid-template-columns:1.05fr .95fr;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 65% 35%,rgba(107,33,48,.22) 0%,transparent 50%),radial-gradient(ellipse at 20% 80%,rgba(107,33,48,.15) 0%,transparent 50%),radial-gradient(ellipse at 85% 85%,rgba(168,144,106,.08) 0%,transparent 40%),var(--black);}
+.hero-vline{position:absolute;left:55px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,var(--wine) 30%,var(--wine) 70%,transparent);opacity:.3;z-index:2;}
+.hero-content{position:relative;z-index:3;align-self:end;padding:0 40px 90px 110px;}
+.hero-eyebrow{font-size:.58rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-light);margin-bottom:26px;opacity:0;animation:fadeUp 1s ease .3s forwards;}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3.6rem,8vw,8rem);font-weight:600;line-height:.88;letter-spacing:-.02em;color:var(--heading);opacity:0;animation:fadeUp 1s ease .5s forwards;}
+.hero-name em{font-style:italic;color:var(--wine-light);}
+.hero-tagline{margin-top:30px;font-size:.68rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text-body);opacity:0;animation:fadeUp 1s ease .7s forwards;}
+.hero-tagline span{opacity:.35;margin:0 10px;}
+.hero-cta{margin-top:40px;display:flex;gap:20px;align-items:center;flex-wrap:wrap;opacity:0;animation:fadeUp 1s ease .9s forwards;}
+.hero-social{margin-top:34px;display:flex;gap:12px;opacity:0;animation:fadeUp 1s ease 1.1s forwards;}
+.hero-photo{position:relative;z-index:1;height:100%;}
+.photo-ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:9rem;color:rgba(184,147,106,.16);background:radial-gradient(ellipse at 50% 30%,rgba(107,33,48,.32),transparent 62%),#160C06;}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;opacity:0;animation:fadeIn 1.6s ease .2s forwards;}
+.hero-photo::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,var(--black) 0%,rgba(26,16,8,0) 40%),linear-gradient(to top,rgba(26,16,8,.8) 0%,transparent 26%);}
+.btn-wine{display:inline-block;padding:13px 34px;background:linear-gradient(135deg,var(--wine),var(--wine-light));color:#F0E8DC;text-decoration:none;font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;font-weight:400;transition:opacity .3s,transform .3s;cursor:pointer;border:none;font-family:'Montserrat',sans-serif;}
+.btn-wine:hover{opacity:.88;transform:translateY(-2px);}
+.btn-outline{display:inline-block;padding:12px 34px;border:1px solid rgba(196,174,130,.4);color:var(--gold);text-decoration:none;font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;transition:border-color .3s,background .3s;background:none;font-family:'Montserrat',sans-serif;cursor:pointer;}
+.btn-outline:hover{border-color:var(--gold);background:rgba(196,174,130,.06);}
+.hero-scroll{position:absolute;bottom:38px;right:60px;z-index:3;writing-mode:vertical-rl;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.55;display:flex;align-items:center;gap:10px;}
+.hero-scroll::after{content:'';width:1px;height:56px;background:var(--wine-light);opacity:.7;animation:scrollLine 2s ease infinite;}
+
+section{position:relative;}
+.section-label{font-size:.52rem;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);margin-bottom:60px;display:flex;align-items:center;gap:18px;}
+.section-label::before{content:'';width:36px;height:1px;background:var(--wine);opacity:.6;}
+.gold-bar{width:52px;height:1px;background:var(--wine);opacity:.4;margin:36px 0;}
+
+.social-row{display:flex;gap:12px;margin-top:28px;}
+.social-link{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border:1px solid rgba(107,33,48,.45);color:var(--wine-light);text-decoration:none;transition:border-color .3s,background .3s;background:rgba(26,16,8,.4);}
+.social-link:hover{border-color:var(--wine-light);background:rgba(107,33,48,.18);}
+.social-link svg{width:14px;height:14px;}
+
+.marquee-wrap{overflow:hidden;padding:26px 0;border-top:1px solid var(--border-wine);border-bottom:1px solid var(--border-wine);background:rgba(107,33,48,.04);}
+.marquee-track{display:flex;gap:72px;animation:marquee 28s linear infinite;white-space:nowrap;}
+.m-item{font-family:'Cormorant Garamond',serif;font-size:.82rem;font-style:italic;color:rgba(196,174,130,.5);letter-spacing:.1em;flex-shrink:0;}
+.m-dot{color:var(--wine-light);opacity:.4;flex-shrink:0;}
+
+.story{padding:130px 60px 130px 110px;display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center;background:var(--black);}
+.story-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,3.8vw,3.8rem);font-weight:600;line-height:1.2;color:var(--heading);margin-bottom:30px;}
+.story-text h2 em{font-style:italic;color:var(--wine-light);}
+.story-text p{font-size:.84rem;line-height:2;color:var(--text-body);margin-bottom:18px;}
+.stat-box{background:rgba(107,33,48,.07);border:1px solid var(--border-wine);padding:36px 28px;transition:background .3s;}
+.stat-box:hover{background:rgba(107,33,48,.14);}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;color:var(--wine-light);line-height:1;margin-bottom:7px;}
+.stat-lbl{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);}
+.city-list{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.25rem;line-height:1.9;color:var(--heading);margin-bottom:12px;}
+
+.highlights{padding:110px 60px;background:var(--surface);border-top:1px solid var(--border-wine);border-bottom:1px solid var(--border-wine);}
+.hl-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
+.hl-item:last-child:nth-child(odd){grid-column:1/-1;}
+.upcoming{padding:110px 60px 110px 110px;background:var(--surface);border-top:1px solid var(--border-wine);}
+.up-card{display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:center;max-width:900px;padding:44px 40px;background:#160C06;border:1px solid var(--border-wine);transition:border-color .3s;}
+.up-card:hover{border-color:rgba(139,52,69,.5);}
+.up-day{font-family:'Cormorant Garamond',serif;font-size:6.5rem;font-weight:300;line-height:.9;color:var(--wine-light);}
+.up-mon{margin-top:12px;font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);}
+.up-time{font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.up-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--heading);line-height:1.25;margin-bottom:8px;}
+.up-venue{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;color:var(--text-muted);margin-bottom:6px;}
+.up-addr{font-size:.74rem;line-height:1.8;color:var(--text-body);margin-bottom:22px;}
+@media(max-width:900px){.upcoming{padding:72px 24px;}.up-card{grid-template-columns:1fr;gap:20px;padding:32px 24px;}.up-day{font-size:5rem;}}
+.journey{padding:130px 60px 110px 110px;background:var(--black);}
+.journey-inner{max-width:900px;}
+.journey h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.4rem);font-weight:600;line-height:1.15;color:var(--heading);margin-bottom:56px;}
+.journey h2 em{font-style:italic;color:var(--wine-light);}
+.jn-row{display:grid;grid-template-columns:150px 1fr;gap:28px;padding:34px 0;border-top:1px solid rgba(196,174,130,.12);}
+.jn-row:last-child{border-bottom:1px solid rgba(196,174,130,.12);}
+.jn-yr{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--wine-light);line-height:1.2;}
+.jn-yr small{display:block;font-family:'Montserrat',sans-serif;font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:8px;}
+.jn-text p{font-size:.84rem;line-height:2;color:var(--text-body);}
+@media(max-width:900px){.journey{padding:72px 24px;}.jn-row{grid-template-columns:1fr;gap:10px;}}
+.hl-item{padding:44px 32px;position:relative;background:#160C06;border:1px solid var(--border-wine);overflow:hidden;transition:border-color .3s,background .3s;}
+.hl-item:hover{border-color:rgba(139,52,69,.5);background:#1E100A;}
+.hl-item::before{content:attr(data-year);position:absolute;top:18px;right:22px;font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;color:rgba(107,33,48,.12);line-height:1;}
+.hl-loc{font-size:.56rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:13px;}
+.hl-title{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600;color:var(--heading);line-height:1.25;margin-bottom:5px;}
+.hl-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:.86rem;color:var(--text-muted);display:block;margin-bottom:16px;}
+.hl-desc{font-size:.76rem;line-height:1.85;color:var(--text-body);}
+.hl-more{text-align:center;margin-top:56px;}
+
+.expertise{padding:130px 60px;display:grid;grid-template-columns:260px 1fr;gap:72px;background:var(--black);}
+.expertise-sidebar h2{font-family:'Cormorant Garamond',serif;font-size:2.6rem;font-weight:600;line-height:1.2;color:var(--heading);position:sticky;top:110px;}
+.expertise-sidebar h2 em{display:block;font-style:italic;color:var(--wine-light);}
+.exp-list{display:flex;flex-direction:column;}
+.exp-item{padding:28px 0;border-bottom:1px solid rgba(196,174,130,.1);display:grid;grid-template-columns:44px 1fr;gap:20px;align-items:start;transition:padding-left .3s;}
+.exp-item:hover{padding-left:6px;}
+.exp-num{font-family:'Cormorant Garamond',serif;font-size:.82rem;color:var(--wine-light);opacity:.7;padding-top:4px;}
+.exp-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:var(--heading);margin-bottom:8px;}
+.exp-desc{font-size:.73rem;line-height:1.85;color:var(--text-body);}
+
+.training{padding:110px 60px;background:#160C06;border-top:1px solid var(--border-wine);}
+.training-inner{max-width:900px;}
+.training h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.4rem);font-weight:600;color:var(--heading);margin-bottom:60px;}
+.training h2 em{font-style:italic;color:var(--wine-light);}
+.tr-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.tr-item{padding:36px 32px;background:#140A04;border:1px solid var(--border-wine);transition:border-color .3s;}
+.tr-item:hover{border-color:rgba(139,52,69,.45);}
+.tr-tag{font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.85;margin-bottom:10px;display:block;}
+.tr-who{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--heading);margin-bottom:5px;}
+.tr-where{font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:14px;}
+.tr-desc{font-size:.73rem;line-height:1.82;color:var(--text-body);}
+
+/* REPERTOIRE */
+.rep-head{padding:130px 60px 40px 110px;background:var(--black);}
+.rep-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,6rem);font-weight:600;line-height:1;color:var(--heading);margin-bottom:22px;}
+.rep-title em{font-style:italic;color:var(--wine-light);}
+.rep-sub{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--text-body);margin-bottom:44px;line-height:2;}
+.rep-nav{display:flex;flex-wrap:wrap;gap:10px;}
+.rep-nav .btn-outline{padding:10px 22px;font-size:.56rem;}
+.rep-part{padding:90px 60px 90px 110px;scroll-margin-top:60px;border-top:1px solid var(--border-wine);background:var(--black);}
+.rep-part.alt{background:#160C06;}
+.rep-inner{max-width:1100px;}
+.rep-part-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.2vw,3rem);font-weight:600;color:var(--heading);margin-bottom:46px;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;}
+.rep-part-title .rn{font-style:italic;font-weight:300;color:var(--wine-light);font-size:1.1rem;letter-spacing:.1em;}
+.rep-era{font-size:.56rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold);margin:46px 0 18px;display:flex;align-items:center;gap:16px;}
+.rep-era:first-of-type{margin-top:0;}
+.rep-era::before{content:'';width:28px;height:1px;background:var(--wine);opacity:.6;}
+.rep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:2px;}
+.rep-card{padding:28px 26px;background:#140A04;border:1px solid var(--border-wine);transition:border-color .3s,background .3s;}
+.rep-part.alt .rep-card{background:#1A0E06;}
+.rep-card:hover{border-color:rgba(139,52,69,.45);}
+.rep-card h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--heading);margin-bottom:12px;line-height:1.25;}
+.rep-card ul{list-style:none;}
+.rep-card li{position:relative;padding-left:15px;font-size:.73rem;line-height:1.75;color:var(--text-body);margin-bottom:5px;}
+.rep-card li::before{content:'';position:absolute;left:0;top:.95em;width:7px;height:1px;background:var(--wine-light);}
+.rep-card li ul{margin-top:4px;}
+.rep-card li li{font-size:.68rem;color:var(--text-muted);margin-bottom:2px;}
+.rep-card .note{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px;}
+.rec-list{border-top:1px solid rgba(196,174,130,.12);}
+.rec-row{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid rgba(196,174,130,.08);}
+.rec-yr{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--wine-light);line-height:1.2;}
+.rec-row ul{list-style:none;}
+.rec-row li{font-size:.73rem;line-height:1.8;color:var(--text-body);}
+.rep-foot{padding:50px 60px 100px 110px;background:var(--black);border-top:1px solid var(--border-wine);}
+.rep-foot p{max-width:760px;font-size:.7rem;line-height:1.9;color:var(--text-muted);font-style:italic;}
+
+.teaching{padding:110px 60px;background:linear-gradient(160deg,rgba(107,33,48,.1) 0%,var(--black) 40%);border-top:1px solid var(--border-wine);}
+.teaching-inner{max-width:940px;margin:0 auto;}
+.teaching h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.4rem);font-weight:600;color:var(--heading);margin-bottom:14px;}
+.teaching h2 em{font-style:italic;color:var(--wine-light);}
+.teaching-lead{font-size:.84rem;line-height:2;color:var(--text-body);max-width:620px;margin-bottom:60px;}
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:48px;}
+.feat{padding:32px 28px;background:var(--surface);border:1px solid var(--border-wine);transition:border-color .3s;}
+.feat:hover{border-color:rgba(139,52,69,.45);}
+.feat-icon{font-size:1.3rem;margin-bottom:13px;display:block;}
+.feat-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--heading);margin-bottom:8px;}
+.feat-text{font-size:.7rem;line-height:1.82;color:var(--text-body);}
+.inst-list{border-top:1px solid rgba(196,174,130,.12);margin-bottom:56px;}
+.inst-item{display:flex;justify-content:space-between;align-items:center;padding:20px 0;border-bottom:1px solid rgba(196,174,130,.07);gap:16px;}
+.inst-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--heading);margin-bottom:4px;}
+.inst-sub{font-size:.62rem;letter-spacing:.1em;color:var(--text-muted);}
+.inst-yr{font-size:.58rem;letter-spacing:.18em;color:var(--wine-light);white-space:nowrap;flex-shrink:0;}
+
+.timeline{padding:130px 60px;background:var(--surface);}
+.timeline-inner{max-width:780px;}
+.timeline h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,3.5vw,3.4rem);font-weight:600;color:var(--heading);margin-bottom:72px;}
+.timeline h2 em{font-style:italic;color:var(--wine-light);}
+.tl-items{position:relative;padding-left:28px;border-left:1px solid rgba(107,33,48,.3);}
+.tl-item{position:relative;padding:0 0 44px 36px;}
+.tl-item::before{content:'';position:absolute;left:-5px;top:7px;width:9px;height:9px;background:var(--wine);border-radius:50%;box-shadow:0 0 12px rgba(107,33,48,.5);}
+.tl-yr{font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:7px;}
+.tl-tag{display:inline-block;font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;padding:2px 7px;border:1px solid rgba(107,33,48,.35);color:var(--wine-light);margin-bottom:8px;margin-right:6px;}
+.tl-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--heading);margin-bottom:6px;}
+.tl-detail{font-size:.7rem;color:var(--text-body);line-height:1.75;}
+
+.contact{padding:130px 60px;background:var(--black);position:relative;overflow:hidden;}
+.contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(107,33,48,.12) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(168,144,106,.06) 0%,transparent 50%);pointer-events:none;}
+.contact-inner{position:relative;z-index:1;max-width:920px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-left h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,5rem);font-weight:600;line-height:1;color:var(--heading);margin-bottom:22px;}
+.contact-left h2 em{font-style:italic;color:var(--wine-light);}
+.contact-left p{font-size:.8rem;line-height:2;color:var(--text-body);margin-bottom:32px;}
+.contact-links{display:flex;flex-direction:column;gap:12px;}
+.contact-link-item{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text-body);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;transition:color .3s;}
+.contact-link-item:hover{color:var(--gold);}
+.contact-link-item svg{width:14px;height:14px;flex-shrink:0;}
+.contact-form{display:flex;flex-direction:column;gap:2px;}
+.form-group{display:flex;flex-direction:column;gap:6px;}
+.form-label{font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);}
+.form-input,.form-textarea{background:rgba(107,33,48,.05);border:1px solid var(--border-wine);color:var(--text-body);font-family:'Montserrat',sans-serif;font-size:.76rem;font-weight:300;padding:13px 16px;outline:none;transition:border-color .3s;width:100%;resize:none;}
+.form-input:focus,.form-textarea:focus{border-color:rgba(139,52,69,.6);}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--text-sub);}
+.form-textarea{height:110px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.form-status{font-size:.68rem;letter-spacing:.12em;color:var(--gold);margin-top:8px;min-height:18px;opacity:0;transition:opacity .4s;}
+.form-status.show{opacity:1;}
+.form-status.err{color:#c97e7e;}
+
+footer{padding:36px 60px;border-top:1px solid rgba(107,33,48,.15);display:flex;justify-content:space-between;align-items:center;font-size:.56rem;letter-spacing:.14em;color:var(--text-sub);background:var(--black);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  nav{padding:18px 24px;}
+  .nav-hide{display:none;}
+  .menu-li{display:list-item;}
+  .nav-right{gap:12px;}
+  .subpage>section:first-of-type{padding-top:130px;}
+  .hero{display:block;}
+  .hero-photo{position:absolute;inset:0;}
+  .hero-photo img{object-position:50% 12%;}
+  .hero-photo::after{background:linear-gradient(to top,rgba(26,16,8,.96) 0%,rgba(26,16,8,.62) 42%,rgba(26,16,8,.12) 100%);}
+  .hero-vline{display:none;}
+  .hero-content{position:absolute;left:0;right:0;bottom:0;padding:0 24px 56px;}
+  .hero-name{font-size:clamp(3.4rem,17vw,5.4rem);}
+  .hero-scroll{display:none;}
+  .story{grid-template-columns:1fr;padding:72px 24px;gap:52px;}
+  .highlights,.training,.teaching,.timeline,.contact{padding:72px 24px;}
+  .hl-grid{grid-template-columns:1fr;}
+  .expertise{grid-template-columns:1fr;padding:72px 24px;}
+  .expertise-sidebar h2{position:static;}
+  .tr-grid,.feat-grid{grid-template-columns:1fr;}
+  .contact-inner{grid-template-columns:1fr;gap:52px;}
+  .form-row{grid-template-columns:1fr;}
+  .rep-head{padding:130px 24px 30px;}
+  .rep-part{padding:64px 24px;}
+  .rep-foot{padding:40px 24px 72px;}
+  .rec-row{grid-template-columns:1fr;gap:8px;}
+  footer{flex-direction:column;gap:10px;text-align:center;padding:28px 24px;}
+  .inst-item{flex-direction:column;align-items:flex-start;gap:4px;}
+}
+</style>
+</head>
+<body class="lang-en">
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="#/home" class="nav-logo">VIOLETTA YEH</a>
+  <ul class="nav-right">
+    <li class="nav-hide"><a href="#/about" data-route="about"><span class="en">About</span><span class="zh">關於</span></a></li>
+    <li class="nav-hide"><a href="#/repertoire" data-route="repertoire"><span class="en">Repertoire</span><span class="zh">曲目</span></a></li>
+    <li class="nav-hide"><a href="#/performances" data-route="performances"><span class="en">Performances</span><span class="zh">演出</span></a></li>
+    <li class="nav-hide"><a href="#/teaching" data-route="teaching"><span class="en">Teaching</span><span class="zh">教學</span></a></li>
+    <li class="nav-hide"><a href="#/contact" data-route="contact"><span class="en">Contact</span><span class="zh">聯繫</span></a></li>
+    <li><button class="lang-btn" id="langBtn">中文</button></li>
+    <li class="menu-li"><button class="menu-btn" id="menuBtn"><span class="en">MENU</span><span class="zh">選單</span></button></li>
+  </ul>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay">
+  <a href="#/home" data-route="home"><span class="en">home</span><span class="zh">首頁</span></a>
+  <a href="#/about" data-route="about"><span class="en">about</span><span class="zh">關於</span></a>
+  <a href="#/repertoire" data-route="repertoire"><span class="en">repertoire</span><span class="zh">曲目</span></a>
+  <a href="#/performances" data-route="performances"><span class="en">performances</span><span class="zh">演出</span></a>
+  <a href="#/teaching" data-route="teaching"><span class="en">teaching</span><span class="zh">教學</span></a>
+  <a href="#/contact" data-route="contact"><span class="en">contact</span><span class="zh">聯繫</span></a>
+</div>
+
+<!-- ===================== HOME ===================== -->
+<main id="page-home" class="page active">
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-vline"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">
+      <span class="en">Pianist · Collaborative Artist · Educator</span>
+      <span class="zh">鋼琴家・合作藝術家・音樂教育者</span>
+    </p>
+    <h1 class="hero-name">Violetta<br><em>Yeh</em></h1>
+    <p class="hero-tagline">London <span>×</span> Paris</p>
+    <div class="hero-cta">
+      <a href="#/repertoire" class="btn-wine"><span class="en">Repertoire</span><span class="zh">曲目</span></a>
+      <a href="#/contact" class="btn-outline"><span class="en">Contact Me</span><span class="zh">聯繫洽詢</span></a>
+    </div>
+    <div class="hero-social">
+      <a href="mailto:musevioletta@gmail.com" class="social-link" title="Email" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+      </a>
+      <a href="https://m.youtube.com/@violetta_worldofart" target="_blank" rel="noopener" class="social-link" title="YouTube" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.8 8s-.2-1.4-.8-2a2.9 2.9 0 0 0-2-.8C17 5 12 5 12 5s-5 0-7 .2a2.9 2.9 0 0 0-2 .8C2.4 6.6 2.2 8 2.2 8S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2a3 3 0 0 0 2 .8C7 19 12 19 12 19s5 0 7-.2a3 3 0 0 0 2-.8c.6-.7.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM10 15V9l5.2 3-5.2 3z"/></svg>
+      </a>
+      <a href="https://lin.ee/TDhGqSvS" target="_blank" rel="noopener" class="social-link" title="LINE" aria-label="LINE">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M17 12c0-2.76-2.69-5-6-5s-6 2.24-6 5c0 2.47 2.19 4.54 5.15 4.93.2.04.47.13.54.3.06.15.04.39.02.54l-.09.52c-.03.16-.12.61.54.33.65-.28 3.52-2.07 4.8-3.54C16.61 14.3 17 13.21 17 12z"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-photo">
+    <div class="photo-ph">VY</div>
+    <img id="portrait" alt="Violetta Yeh at the piano">
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="m-item">National Concert Hall · Taiwan</span><span class="m-dot">·</span>
+    <span class="m-item">Taipei City Council</span><span class="m-dot">·</span>
+    <span class="m-item">Taipei City Government Theatre</span><span class="m-dot">·</span>
+    <span class="m-item">Národní Divadlo · Prague</span><span class="m-dot">·</span>
+    <span class="m-item">Palazzo Nicolaci di Villadorata · Noto</span><span class="m-dot">·</span>
+    <span class="m-item">Chiesa di Santa Chiara</span><span class="m-dot">·</span>
+    <span class="m-item">Palazzo Trigona Sala Gagliardi</span><span class="m-dot">·</span>
+    <span class="m-item">Arcadia Music Center · Los Angeles</span><span class="m-dot">·</span>
+    <span class="m-item">National Taichung Theater</span><span class="m-dot">·</span>
+    <span class="m-item">Gravity Ballet Taipei</span><span class="m-dot">·</span>
+    <span class="m-item">National Concert Hall · Taiwan</span><span class="m-dot">·</span>
+    <span class="m-item">Taipei City Council</span><span class="m-dot">·</span>
+    <span class="m-item">Taipei City Government Theatre</span><span class="m-dot">·</span>
+    <span class="m-item">Národní Divadlo · Prague</span><span class="m-dot">·</span>
+    <span class="m-item">Palazzo Nicolaci di Villadorata · Noto</span><span class="m-dot">·</span>
+    <span class="m-item">Chiesa di Santa Chiara</span><span class="m-dot">·</span>
+    <span class="m-item">Palazzo Trigona Sala Gagliardi</span><span class="m-dot">·</span>
+    <span class="m-item">Arcadia Music Center · Los Angeles</span><span class="m-dot">·</span>
+    <span class="m-item">National Taichung Theater</span><span class="m-dot">·</span>
+    <span class="m-item">Gravity Ballet Taipei</span><span class="m-dot">·</span>
+  </div>
+</div>
+
+<section class="story" id="story">
+  <div class="story-text reveal">
+    <div class="section-label"><span class="en">About</span><span class="zh">關於</span></div>
+    <h2>Where music<br>meets <em>movement</em></h2>
+    <div class="gold-bar"></div>
+    <p class="en">Violetta began piano at the age of five and was selected for Taiwan’s Music Gifted and Talented Education Programme at eight. She holds a B.M. in Piano Performance and a B.A.</p>
+    <p class="zh">五歲開始學習鋼琴，八歲入選臺灣音樂資優教育班，奠定古典鋼琴演奏基礎。擁有音樂學士（鋼琴演奏）及文學士學位。</p>
+    <p class="en">Her work includes collaborations with singers, instrumentalists and dancers, ballet accompaniment, and original music for interdisciplinary projects involving visual art. Her performances and collaborations have taken her to Taipei, Sicily, Los Angeles, Prague and London.</p>
+    <p class="zh">她的藝術實踐涵蓋合作演奏、芭蕾伴奏及跨領域創作，合作對象包括歌者、器樂演奏家與舞者，亦曾為視覺藝術計畫創作原創音樂。演出與合作足跡遍及臺北、西西里、洛杉磯、布拉格及倫敦。</p>
+    <p class="en">With over 11 years of teaching experience, she places listening, communication and artistic expression at the heart of her practice.</p>
+    <p class="zh">擁有十一年以上音樂教學經驗，重視聆聽、溝通與藝術表達，並將其融入教學及合作實踐。</p>
+    <p class="en">Based in London and Paris, she welcomes enquiries for teaching, performances and artistic collaborations.</p>
+    <p class="zh">現居倫敦與巴黎，歡迎教學、演出及藝術合作邀約。</p>
+  </div>
+  <div class="story-visual reveal">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+      <div class="stat-box"><div class="stat-num">11+</div><div class="stat-lbl en">Years Teaching</div><div class="stat-lbl zh">年教學資歷</div></div>
+      <div class="stat-box"><div class="stat-num" style="font-size:1.6rem;line-height:1.3;">London<br>Paris</div><div class="stat-lbl en">Based in</div><div class="stat-lbl zh">現居</div></div>
+    </div>
+    <div class="stat-box" style="margin-top:2px;">
+      <div class="city-list">Taipei · Sicily · Los Angeles<br>Prague · London</div>
+      <div class="stat-lbl en">Performances &amp; collaborations</div>
+      <div class="stat-lbl zh">演出與合作足跡</div>
+    </div>
+  </div>
+</section>
+
+<section class="upcoming" id="upcoming">
+  <div class="section-label reveal"><span class="en">Upcoming Concerts</span><span class="zh">近期演出</span></div>
+  <div class="up-card reveal">
+    <div class="up-date"><div class="up-day">20</div><div class="up-mon"><span class="en">Dec 2026 · Sun</span><span class="zh">2026 年 12 月 · 週日</span></div></div>
+    <div class="up-info">
+      <div class="up-time"><span class="en">3:00 pm – 6:00 pm</span><span class="zh">下午 3:00 – 6:00</span></div>
+      <div class="up-title"><span class="en">Collaborative Pianist with Ensemble Aléatoire</span><span class="zh">與 Ensemble Aléatoire 合作演出</span></div>
+      <span class="up-venue">Église Évangélique des Chinois à Paris</span>
+      <div class="up-addr">21 Passage Wattieaux, 75019 Paris</div>
+      <a class="btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=21+Passage+Wattieaux+75019+Paris" target="_blank" rel="noopener"><span class="en">View Map</span><span class="zh">查看地圖</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="highlights" id="highlights">
+  <div class="section-label reveal"><span class="en">Selected Highlights</span><span class="zh">演出精選</span></div>
+  <div class="hl-grid">
+    <div class="hl-item reveal" data-year="2026">
+      <div class="hl-loc">London · United Kingdom</div>
+      <div class="hl-title">Bloomsbury Festival</div>
+      <span class="hl-sub">Threading Organisms 3.0 · icandance</span>
+      <div class="hl-desc en">Original music created for Threading Organisms 3.0 in collaboration with artist Tere Chad, other artists and a contemporary composer, combining textile art, dance and performance with icandance, a charity supporting disabled children and young people through creative expression.</div>
+      <div class="hl-desc zh">與藝術家 Tere Chad、其他藝術家及當代作曲家合作，為《Threading Organisms 3.0》創作原創音樂，結合紡織藝術、舞蹈與表演，並與透過創意表達支持身心障礙兒童及青少年的慈善機構 icandance 合作。</div>
+    </div>
+    <div class="hl-item reveal" data-year="2025">
+      <div class="hl-loc">Prague · Czech Republic</div>
+      <div class="hl-title">Národní Divadlo</div>
+      <span class="hl-sub">Summer Workshop · Czech National Ballet</span>
+      <div class="hl-desc en">Summer workshop with Czech National Ballet principal dancers. Ballet accompaniment as pianist-intern.</div>
+      <div class="hl-desc zh">與捷克國家芭蕾首席舞者暑期工作坊，擔任芭蕾伴奏實習鋼琴家。</div>
+    </div>
+    <div class="hl-item reveal" data-year="2023">
+      <div class="hl-loc">Noto · Sicily · Italy</div>
+      <div class="hl-title">Sicily International Piano &amp; Vocal Festival</div>
+      <span class="hl-sub">Palazzo Nicolaci di Villadorata · Chiesa di Santa Chiara · Palazzo Trigona Sala Gagliardi</span>
+      <div class="hl-desc en">Piano solo recital and vocal collaboration across three historic venues in Noto — a UNESCO-listed baroque palace, a 17th-century church, and a noble palazzo gallery.</div>
+      <div class="hl-desc zh">於諾托三處歷史場館演出：尼可拉奇宮、聖基亞拉教堂及特里戈納宮加列亞迪廳，演出鋼琴獨奏及聲樂合作。</div>
+    </div>
+    <div class="hl-item reveal" data-year="2024–25">
+      <div class="hl-loc">Taipei · Taiwan</div>
+      <div class="hl-title">Community &amp; Charity Performances</div>
+      <span class="hl-sub en">NTU Cancer Center · NTU Hospital · Yangfore Hospital · Leofoo Village (Equal Home Baby Charity Association)</span>
+      <span class="hl-sub zh" style="font-family:'Noto Serif TC',serif;font-weight:200;">NTU Cancer Center · NTU Hospital · Yangfore Hospital · 六福村（社團法人中華民國等家寶寶社會福利協會）</span>
+      <div class="hl-desc en">2025: Performances at NTU Cancer Center (April), NTU Hospital (October), and Yangfore Hospital (March). 2024: Student charity concert at Leofoo Village in partnership with the Equal Home Baby Charity Association Dream Project — guiding orphanage students to perform for a broader community audience.</div>
+      <div class="hl-desc zh">2025 年於台大醫院癌症中心（4月）、台大醫院總院（10月）及元附醫院（3月）演出。2024 年與<span style="font-family:'Noto Serif TC',serif;font-weight:200;">社團法人中華民國等家寶寶社會福利協會</span>圓夢計劃合作，指導育幼院學生於六福村主題樂園公益演出。</div>
+    </div>
+    <div class="hl-item reveal" data-year="2024">
+      <div class="hl-loc">Taichung · Taiwan</div>
+      <div class="hl-title">National Taichung Theater</div>
+      <span class="hl-sub">Ballet Music Workshop · Formosa Ballet &amp; Music Collaboration Association</span>
+      <div class="hl-desc en">Participated as music collaboration instructor-intern at the Tchaikovsky Sleeping Beauty Workshop — a two-day intensive at the National Taichung Theater hosted by FEBMCA.</div>
+      <div class="hl-desc zh">於臺中國家歌劇院參與柴可夫斯基《睡美人》芭蕾音樂工作坊，擔任音樂合作實習講師，由福爾摩沙芭蕾教育與音樂合作協會主辦。</div>
+    </div>
+  </div>
+  <div class="hl-more reveal">
+    <a href="#/repertoire" class="btn-outline"><span class="en">View Complete Repertoire</span><span class="zh">查看完整曲目</span></a>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== ABOUT ===================== -->
+<main id="page-about" class="page subpage">
+
+<section class="journey">
+  <div class="journey-inner">
+    <div class="section-label reveal"><span class="en">Artistic Journey</span><span class="zh">藝術歷程</span></div>
+    <h2 class="reveal"><span class="en">In my own <em>words</em></span><span class="zh">我的<em>藝術歷程</em></span></h2>
+    <div class="jn-row reveal"><div class="jn-yr">2023<small>Sicily · Italy</small></div><div class="jn-text">
+      <p class="en">In 2023, I participated in the Sicily International Piano &amp; Vocal Festival in Italy as a solo pianist, where the masterclasses and vocal collaboration deepened my understanding of accompaniment.</p>
+      <p class="zh">2023 年，我以獨奏鋼琴家的身分參加義大利西西里國際鋼琴及聲樂音樂節，大師班與聲樂合作讓我對伴奏有了更深的理解。</p></div></div>
+    <div class="jn-row reveal"><div class="jn-yr">2024–25<small>Taipei · Prague</small></div><div class="jn-text">
+      <p class="en">In 2024, I was selected for collaborative teacher training by the Formosa Ballet Education and Music Collaboration Association, participating in workshops and repertoire coaching. I attended the Czech National Ballet Summer Workshop in 2025 and worked as a ballet pianist at Gravity Ballet in Taipei.</p>
+      <p class="zh">2024 年，我獲福爾摩沙芭蕾教育與音樂合作協會選入合作教師培訓，參與工作坊與曲目指導。2025 年參加捷克國家芭蕾暑期工作坊，並於台北 Gravity Ballet 擔任芭蕾鋼琴家。</p></div></div>
+    <div class="jn-row reveal"><div class="jn-yr">2026<small>Autumn · London</small></div><div class="jn-text">
+      <p class="en">This autumn, I collaborated with artist Tere Chad, other artists and a contemporary composer to create original music for Threading Organisms 3.0 at London’s Bloomsbury Festival. The project combined textile art, dance and performance with icandance, a charity supporting disabled children and young people through creative expression. It demonstrated how music fosters connection across art forms.</p>
+      <p class="zh">今年秋天，我與藝術家 Tere Chad、其他藝術家及一位當代作曲家合作，為倫敦 Bloomsbury Festival 的《Threading Organisms 3.0》創作原創音樂。該計畫結合紡織藝術、舞蹈與表演，並與 icandance 合作——這是一個透過創意表達支持身心障礙兒童及青少年的慈善機構。這個計畫讓我看見音樂如何促進不同藝術形式之間的連結。</p></div></div>
+  </div>
+</section>
+
+<section class="expertise">
+  <div class="expertise-sidebar reveal">
+    <div class="section-label"><span class="en">Expertise</span><span class="zh">專業領域</span></div>
+    <h2><span class="en">Areas of<br><em>Practice</em></span><span class="zh">專業<br><em>範疇</em></span></h2>
+  </div>
+  <div class="exp-list">
+    <div class="exp-item reveal">
+      <div class="exp-num">01</div>
+      <div>
+        <div class="exp-name">Ballet Accompaniment</div>
+        <div class="exp-desc en">Daily class accompaniment, improvisation for barre and centre exercises, and solo variation coaching at Gravity Ballet Taipei. Participated in workshops at National Taichung Theater and Taipei Performing Arts Center with FEBMCA, observing and assisting with coaching students for overseas dance conservatory auditions.</div>
+        <div class="exp-desc zh">課堂即興伴奏、把杆與中間練習陪練、獨舞排練指導。於 Gravity Ballet Taipei 任職；參與台中國家歌劇院及台北表演藝術中心芭蕾音樂工作坊，觀摩與學習，協助舞者準備海外舞蹈學院入學面試。</div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-num">02</div>
+      <div>
+        <div class="exp-name">Piano Performance</div>
+        <div class="exp-desc en">Classical solo, chamber music, orchestral and collaborative piano across Taiwan, Italy, the Czech Republic, and the United States. Trained under former Fu Jen Music Department head Dr. Sheau-Ping Hu; received solo masterclass direction under Dr. Mariette Saglie in Los Angeles.</div>
+        <div class="exp-desc zh">古典獨奏、室內樂、樂團及鋼琴合作，演出足跡遍及台灣、義大利、捷克與美國。師事前輔仁音樂系主任胡小萍教授；赴洛杉磯接受 Dr. Mariette Saglie 教授獨奏指導與演出。</div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-num">03</div>
+      <div>
+        <div class="exp-name">Vocal Collaboration</div>
+        <div class="exp-desc en">Opera, choral, and jazz vocal accompaniment. Received solo masterclass direction from Professor Dmitry Rachmanov (Chair of Keyboard Studies, CSUN) at the 2023 Sicily International Piano &amp; Vocal Festival. Collaborative pianist and teaching assistant for the San Gabriel Valley Children's Chorus, Los Angeles, 2024.</div>
+        <div class="exp-desc zh">歌劇、合唱與爵士聲樂合作。2023 年在義大利西西里國際鋼琴及聲樂音樂節接受 CSUN 鍵盤部主任 Dmitry Rachmanov 教授進行獨奏指導；2024 年洛杉磯南加州兒童合唱團鋼琴合作暨助教。</div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-num">04</div>
+      <div>
+        <div class="exp-name">Instrumental Collaboration</div>
+        <div class="exp-desc en">Chamber music and ensemble collaboration with strings, winds, and percussion. 2024: Arcadia Music Center cello ensemble, Los Angeles. 2018: Piano-marimba duo placed 2nd in Taipei City Music Competition. Clarinet: 2017 Ministry of National Defense wind orchestra; 2024 Fu Jen Jazz Orchestra soloist.</div>
+        <div class="exp-desc zh">與弦樂、管樂及打擊樂器的室內樂與合奏合作。2024 年洛杉磯 Arcadia Music Center 大提琴合奏演出；2018 鋼琴合作曾獲台北市音樂比賽第二名。2017 年國防部示範樂隊管樂團聯合合奏演出、2024 年輔仁爵士樂團單簧管獨奏。</div>
+      </div>
+    </div>
+    <div class="exp-item reveal">
+      <div class="exp-num">05</div>
+      <div>
+        <div class="exp-name">Music Education</div>
+        <div class="exp-desc en">Over 11 years of private instruction across age groups and levels. Has taught at Rising Star Academy (School of Popular Music, California College of Music, Los Angeles) and Taipei Fuhsing Private School, with students from Taipei American School (TAS), Taipei European School (TES), and Kang Chiao International School. Students have placed in the Taipei City Music Competition and school competitions.</div>
+        <div class="exp-desc zh">逾 11 年個別課程教學。曾任教於洛杉磯加州音樂學院流行音樂學校 Rising Star Academy、台北復興私立學校，並指導台北美國學校（TAS）、台北歐洲學校（TES）、康橋國際學校學生。學生曾獲台北市音樂比賽第二名及校內音樂比賽等獎項。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="training">
+  <div class="training-inner">
+    <div class="section-label reveal"><span class="en">Masterclasses &amp; Further Study</span><span class="zh">大師班與進修</span></div>
+    <h2 class="reveal"><span class="en">Learning from<br><em>the Best</em></span><span class="zh">向世界頂尖<br><em>藝術家學習</em></span></h2>
+    <div class="tr-grid">
+      <div class="tr-item reveal">
+        <span class="tr-tag en">Piano Solo</span><span class="tr-tag zh">獨奏</span>
+        <div class="tr-who">Dr. Mariette Saglie</div>
+        <div class="tr-where">Los Angeles Classical Music Inc. · Los Angeles</div>
+        <div class="tr-desc en">Masterclass solo direction and performance under the Chilean-American pianist, Beverly Hills' Forty Under 40 honouree and founder of Los Angeles Classical Music Inc.</div>
+        <div class="tr-desc zh">接受智利裔美籍鋼琴家、洛杉磯古典音樂協會創辦人鋼琴獨奏指導與演出。</div>
+      </div>
+      <div class="tr-item reveal">
+        <span class="tr-tag en">Dance Music Collaboration</span><span class="tr-tag zh">舞蹈音樂合作</span>
+        <div class="tr-who">Prof. Milla Hsueh · Prof. YaYin Huang</div>
+        <div class="tr-where">Formosa Ballet &amp; Music Collaboration Association · TNUA</div>
+        <div class="tr-desc en">Dance music collaboration and improvisation under the founding faculty of FEBMCA — both professors teaching in the Dance Department at National Taipei University of the Arts.</div>
+        <div class="tr-desc zh">接受福爾摩沙芭蕾教育與音樂合作協會指導，兩位教授均任教於台北藝術大學舞蹈系，學習舞蹈音樂合作與即興演奏。</div>
+      </div>
+      <div class="tr-item reveal">
+        <span class="tr-tag en">Piano Solo &amp; Vocal Collaboration</span><span class="tr-tag zh">鋼琴獨奏與聲樂合作</span>
+        <div class="tr-who">Professor Dmitry Rachmanov</div>
+        <div class="tr-where">California State University Northridge · Los Angeles</div>
+        <div class="tr-desc en">Received solo masterclass direction and performance at the Sicily International Music Festival under the Chair of Keyboard Studies at CSUN — deepening advanced technique and interpretive approach.</div>
+        <div class="tr-desc zh">於義大利西西里國際音樂節接受加州州立大學北嶺分校鍵盤研究主任大師班獨奏指導與演出，深化進階演奏技術與曲目詮釋。</div>
+      </div>
+      <div class="tr-item reveal">
+        <span class="tr-tag en">Jazz</span><span class="tr-tag zh">爵士音樂</span>
+        <div class="tr-who en">Prof. Darmon Meader · Kaoru Uno</div>
+        <div class="tr-who zh" style="font-family:'Noto Serif TC',serif;font-weight:200;">Prof. Darmon Meader · 烏野薰 Kaoru Uno</div>
+        <div class="tr-where">Manhattan School of Music · New York Voices · Fu Jen Jazz Festival</div>
+        <div class="tr-desc en">Jazz improvisation and ensemble masterclass direction and performance at the Fu Jen Jazz Festival, under New York Voices founder and Manhattan School of Music faculty Darmon Meader, and jazz pianist Kaoru Uno.</div>
+        <div class="tr-desc zh">於輔仁大學爵士音樂節接受 New York Voices 創辦人暨曼哈頓音樂學院教授、爵士鋼琴家<span style="font-family:'Noto Serif TC',serif;font-weight:200;">烏野薰</span> Kaoru Uno 大師班爵士音樂即興與合奏指導、演出。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== REPERTOIRE ===================== -->
+<main id="page-repertoire" class="page subpage">
+
+<section class="rep-head">
+  <div class="section-label reveal"><span class="en">Repertoire</span><span class="zh">曲目</span></div>
+  <h1 class="rep-title reveal"><span class="en">Complete <em>Repertoire</em></span><span class="zh">完整<em>曲目</em></span></h1>
+  <p class="rep-sub reveal">
+    <span class="en">Concert Pianist · Collaborative Pianist · Chamber Musician · Ballet Pianist</span>
+    <span class="zh">音樂會鋼琴家 · 合作鋼琴家 · 室內樂演奏家 · 芭蕾鋼琴家</span>
+  </p>
+  <div class="rep-nav reveal">
+    <button class="btn-outline" data-goto="rep-solo"><span class="en">Solo Piano</span><span class="zh">獨奏</span></button>
+    <button class="btn-outline" data-goto="rep-collab"><span class="en">Collaborative</span><span class="zh">合作鋼琴</span></button>
+    <button class="btn-outline" data-goto="rep-ballet"><span class="en">Ballet &amp; Dance</span><span class="zh">芭蕾與舞蹈</span></button>
+    <button class="btn-outline" data-goto="rep-studies"><span class="en">Études</span><span class="zh">練習曲</span></button>
+    <button class="btn-outline" data-goto="rep-recitals"><span class="en">Recital History</span><span class="zh">演出紀錄</span></button>
+  </div>
+</section>
+
+<!-- I. SOLO -->
+<section class="rep-part" id="rep-solo">
+  <div class="rep-inner">
+    <h2 class="rep-part-title reveal"><span class="rn">I.</span><span class="en">Solo Piano Repertoire</span><span class="zh">鋼琴獨奏曲目</span></h2>
+
+    <div class="rep-era reveal"><span class="en">Baroque</span><span class="zh">巴洛克</span></div>
+    <div class="rep-grid">
+      <div class="rep-card reveal"><h4>Johann Sebastian Bach</h4><ul>
+        <li>Little Preludes and Fughettas: BWV 927, 933, 934, 935, 938, 939, 942</li>
+        <li>French Suite No. 4</li>
+        <li>French Suite No. 6 in E major, BWV 817</li>
+        <li>Prelude and Fugue in C minor, BWV 847</li>
+        <li>Prelude and Fugue in D major, BWV 850</li>
+        <li>Prelude and Fugue in E minor, BWV 855</li>
+        <li>Two-Part Invention No. 4 in D minor, BWV 775</li>
+        <li>Two-Part Invention No. 12 in A major, BWV 783</li>
+        <li>Three-Part Invention No. 4 in D minor, BWV 790</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Domenico Scarlatti</h4><ul>
+        <li>Sonata in G major, K. 427</li>
+        <li>Sonata in D minor, K. 1</li>
+        <li>Sonata in C major, K. 159</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Wilhelm Friedemann Bach</h4><ul><li>Frühling</li></ul></div>
+      <div class="rep-card reveal"><h4>Jean-Philippe Rameau</h4><ul><li>La Joyeuse</li></ul></div>
+      <div class="rep-card reveal"><h4>Johann Philipp Kirnberger</h4><ul><li>Fanfare</li></ul></div>
+      <div class="rep-card reveal"><h4>Johann Kuhnau</h4><ul><li>Hiskia agonizzante e risanato, second movement</li></ul></div>
+      <div class="rep-card reveal"><h4>Henry Purcell</h4><ul><li>Prelude</li></ul></div>
+    </div>
+
+    <div class="rep-era reveal"><span class="en">Classical</span><span class="zh">古典</span></div>
+    <div class="rep-grid">
+      <div class="rep-card reveal"><h4>Joseph Haydn</h4><ul><li>Piano Sonata in D major, Hob. XVI:24</li></ul></div>
+      <div class="rep-card reveal"><h4>Wolfgang Amadeus Mozart</h4><ul>
+        <li>Piano Sonata in B-flat major, K. 281</li>
+        <li>Piano Sonata in B-flat major, K. 282</li>
+        <li>Piano Sonata in C major, K. 330</li>
+        <li>Piano Concerto No. 12 in A major, K. 414</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Ludwig van Beethoven</h4><ul>
+        <li>32 Variations in C minor, WoO 80</li>
+        <li>Piano Sonata in E major, Op. 14 No. 1</li>
+        <li>Piano Sonata in G major, Op. 14 No. 2</li>
+        <li>Rondo in C major, Op. 51 No. 1</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Muzio Clementi</h4><ul>
+        <li>Piano Sonata in C major, Op. 36 No. 1</li>
+        <li>Piano Sonata in F major, Op. 36 No. 3</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Friedrich Kuhlau</h4><ul>
+        <li>Piano Sonata in C major, Op. 20 No. 1</li>
+        <li>Piano Sonata in F major, Op. 55 No. 3</li>
+      </ul></div>
+    </div>
+
+    <div class="rep-era reveal"><span class="en">Romantic</span><span class="zh">浪漫</span></div>
+    <div class="rep-grid">
+      <div class="rep-card reveal"><h4>Frédéric Chopin</h4><ul>
+        <li>Fantaisie-Impromptu in C-sharp minor, Op. 66</li>
+        <li>Impromptu No. 3 in G-flat major, Op. 51</li>
+        <li>Prelude in F major, Op. 28 No. 23</li>
+        <li>Études, Op. 10: Nos. 1, 2, 3, 9, 12</li>
+        <li>Études, Op. 25: Nos. 1, 2</li>
+        <li>Nocturne in E-flat major, Op. 9 No. 2</li>
+        <li>Polonaise in C-sharp minor, Op. 26 No. 1</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Felix Mendelssohn</h4><ul>
+        <li>Rondo Capriccioso, Op. 14</li>
+        <li>Fantasie, Op. 28</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Franz Schubert</h4><ul>
+        <li>Piano Sonata in E-flat major, D. 568, Op. posth. 122</li>
+        <li>Impromptu in B-flat major, D. 935 No. 3 / Op. 142 No. 3</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Robert Schumann</h4><ul>
+        <li>Arabeske in C major, Op. 18</li>
+        <li>Kinderszenen, Op. 15</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Johannes Brahms</h4><ul><li>Intermezzo in A major, Op. 118 No. 2</li></ul></div>
+    </div>
+
+    <div class="rep-era reveal"><span class="en">19th–20th Century &amp; Contemporary</span><span class="zh">十九至二十世紀及當代</span></div>
+    <div class="rep-grid">
+      <div class="rep-card reveal"><h4>Claude Debussy</h4><ul>
+        <li>Pour le piano</li>
+        <li>Deux Arabesques: Nos. 1 and 2</li>
+        <li>Jardins sous la pluie</li>
+        <li>Suite bergamasque
+          <ul><li>Prélude</li><li>Menuet</li><li>Clair de lune</li><li>Passepied</li></ul>
+        </li>
+        <li>Children’s Corner
+          <ul><li>Doctor Gradus ad Parnassum</li><li>Jimbo’s Lullaby</li><li>Serenade for the Doll</li><li>The Snow Is Dancing</li><li>The Little Shepherd</li><li>Golliwogg’s Cakewalk</li></ul>
+        </li>
+        <li>Prélude: Les sons et les parfums tournent dans l’air du soir</li>
+        <li>La plus que lente, L. 121</li>
+        <li>Images, Book I: No. 1, Reflets dans l’eau</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Maurice Ravel</h4><ul><li>Sonatine</li></ul></div>
+      <div class="rep-card reveal"><h4>Erik Satie</h4><ul>
+        <li>Gymnopédie No. 1</li><li>Gymnopédie No. 2</li><li>Gymnopédie No. 3</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Emmanuel Chabrier</h4><ul><li>Scherzo-Valse</li></ul></div>
+      <div class="rep-card reveal"><h4>Béla Bartók</h4><ul><li>For Children: Nos. 9, 10, 11, 13–22, 24, 25, 28, 30–35, 37, 40</li></ul></div>
+      <div class="rep-card reveal"><h4>Aram Khachaturian</h4><ul><li>Toccata</li></ul></div>
+      <div class="rep-card reveal"><h4>Anton Arensky</h4><ul><li>Nocturne, Op. 36 No. 3</li></ul></div>
+      <div class="rep-card reveal"><h4>Sergei Rachmaninoff</h4><ul><li>Moment musical No. 4 in E minor, Op. 16</li></ul></div>
+      <div class="rep-card reveal"><h4>Lin Chin-Yow</h4><ul><li>Étude, Op. 65 No. 1</li></ul></div>
+      <div class="rep-card reveal"><h4>Ma Shui-Long</h4><ul><li>Sonata for Piano (1974), No. 3</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- II. COLLABORATIVE -->
+<section class="rep-part alt" id="rep-collab">
+  <div class="rep-inner">
+    <h2 class="rep-part-title reveal"><span class="rn">II.</span><span class="en">Collaborative Piano Repertoire</span><span class="zh">合作鋼琴曲目</span></h2>
+
+    <div class="rep-era reveal"><span class="en">A · Voice &amp; Piano</span><span class="zh">A · 聲樂與鋼琴</span></div>
+    <div class="rep-grid">
+      <div class="rep-card reveal"><span class="note"><span class="en">Baroque</span><span class="zh">巴洛克</span></span><h4>George Frideric Handel</h4><ul>
+        <li>Messiah, HWV 56: No. 19, Recitative – “Then shall the eyes of the blind be opened” (Alto)</li>
+      </ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">Classical</span><span class="zh">古典</span></span><h4>Wolfgang Amadeus Mozart</h4><ul>
+        <li>“Hai già vinta la causa!… Vedrò, mentr’io sospiro”, from Le nozze di Figaro, Act III</li>
+      </ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">Romantic</span><span class="zh">浪漫</span></span><h4>Franz Schubert</h4><ul><li>Der Zwerg, D. 771</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">Romantic</span><span class="zh">浪漫</span></span><h4>Robert Schumann</h4><ul><li>Dichterliebe, Op. 48</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">Romantic</span><span class="zh">浪漫</span></span><h4>Gabriel Fauré</h4><ul><li>Après un rêve, Op. 7 No. 1</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">Romantic</span><span class="zh">浪漫</span></span><h4>Richard Strauss</h4><ul><li>Allerseelen</li><li>Morgen!</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">20th Century &amp; Contemporary</span><span class="zh">二十世紀及當代</span></span><h4>Claude Debussy</h4><ul><li>Green, from Ariettes oubliées</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">20th Century &amp; Contemporary</span><span class="zh">二十世紀及當代</span></span><h4>Maurice Ravel</h4><ul><li>Chanson romanesque, from Don Quichotte à Dulcinée</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">20th Century &amp; Contemporary</span><span class="zh">二十世紀及當代</span></span><h4>Benjamin Britten</h4><ul><li>Let the Florid Music Praise</li></ul></div>
+    </div>
+
+    <div class="rep-era reveal"><span class="en">B · Violin &amp; Piano</span><span class="zh">B · 小提琴與鋼琴</span></div>
+    <div class="rep-grid">
+      <div class="rep-card reveal"><span class="note"><span class="en">Baroque</span><span class="zh">巴洛克</span></span><h4>Antonio Vivaldi</h4><ul><li>The Four Seasons (violin and piano reduction)</li></ul></div>
+    </div>
+
+    <div class="rep-era reveal"><span class="en">C · Cello &amp; Piano</span><span class="zh">C · 大提琴與鋼琴</span></div>
+    <div class="rep-grid">
+      <div class="rep-card reveal"><span class="note"><span class="en">Classical</span><span class="zh">古典</span></span><h4>Ludwig van Beethoven</h4><ul><li>7 Variations in E-flat major on “Bei Männern, welche Liebe fühlen”, WoO 46</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">Romantic</span><span class="zh">浪漫</span></span><h4>Sergei Rachmaninoff</h4><ul><li>Vocalise, Op. 34 No. 14</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">Romantic</span><span class="zh">浪漫</span></span><h4>Edward Elgar</h4><ul><li>Cello Concerto in E minor, Op. 85</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">Romantic</span><span class="zh">浪漫</span></span><h4>Fritz Kreisler</h4><ul><li>Praeludium and Allegro (cello and piano arrangement)</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">Romantic</span><span class="zh">浪漫</span></span><h4>Camille Saint-Saëns</h4><ul><li>Le Carnaval des animaux, R. 125 (cello and piano arrangement)</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">20th Century &amp; Contemporary</span><span class="zh">二十世紀及當代</span></span><h4>Claude Debussy</h4><ul><li>La plus que lente, L. 121 (cello and piano arrangement)</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">20th Century &amp; Contemporary</span><span class="zh">二十世紀及當代</span></span><h4>Sergei Prokofiev</h4><ul><li>Dance of the Knights (cello and piano arrangement)</li></ul></div>
+    </div>
+
+    <div class="rep-era reveal"><span class="en">D · Piano Duet</span><span class="zh">D · 鋼琴二重奏</span></div>
+    <div class="rep-grid">
+      <div class="rep-card reveal"><span class="note"><span class="en">Classical</span><span class="zh">古典</span></span><h4>Wolfgang Amadeus Mozart</h4><ul><li>Sonata for Two Pianos in D major, K. 448</li></ul></div>
+      <div class="rep-card reveal"><span class="note"><span class="en">Romantic</span><span class="zh">浪漫</span></span><h4>Georges Bizet</h4><ul>
+        <li>Jeux d’enfants, “Children’s Games”: I</li>
+        <li>Jeux d’enfants, “Children’s Games”: II</li>
+        <li>Jeux d’enfants, Op. 22, WD 56: La poupée</li>
+      </ul></div>
+    </div>
+
+    <div class="rep-era reveal"><span class="en">E · Currently Preparing — Cello &amp; Piano</span><span class="zh">E · 準備中 — 大提琴與鋼琴</span></div>
+    <div class="rep-grid">
+      <div class="rep-card reveal"><h4>Claude Debussy</h4><ul><li>Cello Sonata in D minor, L. 135</li></ul></div>
+      <div class="rep-card reveal"><h4>Sergei Rachmaninoff</h4><ul><li>Cello Sonata in G minor, Op. 19
+        <ul><li>III. Andante</li></ul></li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- III. BALLET -->
+<section class="rep-part" id="rep-ballet">
+  <div class="rep-inner">
+    <h2 class="rep-part-title reveal"><span class="rn">III.</span><span class="en">Ballet &amp; Dance Accompaniment</span><span class="zh">芭蕾與舞蹈伴奏</span></h2>
+    <div class="rep-grid">
+      <div class="rep-card reveal">
+        <h4><span class="en">Classical Ballet</span><span class="zh">古典芭蕾</span></h4>
+        <ul class="en"><li>Barre</li><li>Centre practice</li><li>Adagio</li><li>Pirouettes</li><li>Petit allegro</li><li>Grand allegro</li><li>Pointe work</li></ul>
+        <ul class="zh"><li>把杆練習</li><li>中間練習</li><li>慢板（Adagio）</li><li>旋轉（Pirouettes）</li><li>小跳（Petit allegro）</li><li>大跳（Grand allegro）</li><li>足尖練習</li></ul>
+      </div>
+      <div class="rep-card reveal">
+        <h4><span class="en">Rehearsal, Workshop &amp; Contemporary Movement</span><span class="zh">排練、工作坊與當代肢體</span></h4>
+        <ul class="en"><li>Ballet class accompaniment</li><li>Ballet rehearsal and workshop accompaniment</li><li>Contemporary dance and movement exercises</li><li>Musical improvisation and adaptation</li><li>Live accompaniment responsive to dancers’ timing, phrasing and movement</li></ul>
+        <ul class="zh"><li>芭蕾課程伴奏</li><li>芭蕾排練與工作坊伴奏</li><li>當代舞蹈與肢體練習</li><li>音樂即興與調適</li><li>回應舞者節奏、樂句與動作的現場伴奏</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IV. STUDIES -->
+<section class="rep-part alt" id="rep-studies">
+  <div class="rep-inner">
+    <h2 class="rep-part-title reveal"><span class="rn">IV.</span><span class="en">Technical Studies &amp; Études</span><span class="zh">技術練習與練習曲</span></h2>
+    <div class="rep-grid">
+      <div class="rep-card reveal"><h4>Carl Czerny</h4><ul>
+        <li>Études de mécanisme, Op. 849: Nos. 1–14, 17, 20, 21, 26</li>
+        <li>Op. 599</li>
+        <li>40 Études, Op. 299: Nos. 11 and 12</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Friedrich Burgmüller</h4><ul>
+        <li>18 Studies, Op. 109: Nos. 1 and 6</li>
+        <li>25 Études, Op. 100</li>
+      </ul></div>
+      <div class="rep-card reveal"><h4>Moritz Moszkowski</h4><ul><li>20 Little Études, Op. 91: Nos. 7 and 14</li></ul></div>
+      <div class="rep-card reveal"><h4>Josef Pischna</h4><ul><li>Technical Studies for Piano</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- V. RECITALS -->
+<section class="rep-part" id="rep-recitals">
+  <div class="rep-inner">
+    <h2 class="rep-part-title reveal"><span class="rn">V.</span><span class="en">Selected Formal Recital &amp; Performance History</span><span class="zh">正式獨奏會與演出紀錄精選</span></h2>
+    <div class="rec-list">
+      <div class="rec-row reveal"><div class="rec-yr">2023</div><ul>
+        <li>Khachaturian – Toccata</li>
+        <li>Arensky – Nocturne, Op. 36 No. 3</li>
+        <li>Rachmaninoff – Moment musical No. 4, Op. 16</li>
+        <li>Chopin – Fantaisie-Impromptu, Op. 66</li></ul></div>
+      <div class="rec-row reveal"><div class="rec-yr">2022</div><ul>
+        <li>Debussy – Les sons et les parfums tournent dans l’air du soir</li>
+        <li>Chopin – Étude, Op. 10 No. 12</li>
+        <li>Beethoven – Piano Sonata, Op. 14</li></ul></div>
+      <div class="rec-row reveal"><div class="rec-yr">2019</div><ul>
+        <li>Bach – French Suite No. 6 in E major, BWV 817</li>
+        <li>Mozart – Piano Sonata in C major, K. 330</li>
+        <li>Schumann – Kinderszenen, Op. 15</li>
+        <li>Ravel – Sonatine</li></ul></div>
+      <div class="rec-row reveal"><div class="rec-yr">2018</div><ul>
+        <li>Bach – French Suite No. 6 in E major, BWV 817</li>
+        <li>Mendelssohn – Rondo Capriccioso, Op. 14</li></ul></div>
+      <div class="rec-row reveal"><div class="rec-yr">2017<br><span class="en" style="font-size:.9rem;font-style:italic;">Autumn</span><span class="zh" style="font-size:.9rem;">秋</span></div><ul>
+        <li>Bach – Prelude and Fugue in E minor, BWV 855</li>
+        <li>Mozart – Piano Concerto No. 12 in A major, K. 414</li>
+        <li>Chopin – Impromptu No. 3 in G-flat major, Op. 51</li>
+        <li>Chopin – Études, Op. 25 Nos. 1 and 2</li>
+        <li>Debussy – Suite bergamasque (complete)</li></ul></div>
+      <div class="rec-row reveal"><div class="rec-yr">2017<br><span class="en" style="font-size:.9rem;font-style:italic;">Spring</span><span class="zh" style="font-size:.9rem;">春</span></div><ul>
+        <li>Mozart – Piano Concerto No. 12 in A major, K. 414</li></ul></div>
+      <div class="rec-row reveal"><div class="rec-yr">2016<br><span class="en" style="font-size:.9rem;font-style:italic;">Autumn</span><span class="zh" style="font-size:.9rem;">秋</span></div><ul>
+        <li>Bach – Prelude and Fugue in C minor, BWV 847</li>
+        <li>Bach – Prelude and Fugue in D major, BWV 850</li>
+        <li>Chopin – Étude, Op. 10 No. 9</li>
+        <li>Chopin – Étude, Op. 25 No. 2</li>
+        <li>Chopin – Nocturne in E-flat major, Op. 9 No. 2</li>
+        <li>Schubert – Impromptu in B-flat major, D. 935 No. 3</li></ul></div>
+      <div class="rec-row reveal"><div class="rec-yr">2016<br><span class="en" style="font-size:.9rem;font-style:italic;">Spring</span><span class="zh" style="font-size:.9rem;">春</span></div><ul>
+        <li>Bach – French Suite No. 4</li>
+        <li>Chopin – Polonaise in C-sharp minor, Op. 26 No. 1</li>
+        <li>Chopin – Étude, Op. 10 No. 2</li>
+        <li>Chopin – Étude, Op. 25 No. 1</li>
+        <li>Schumann – Arabeske in C major, Op. 18</li></ul></div>
+      <div class="rec-row reveal"><div class="rec-yr">2015<br><span class="en" style="font-size:.9rem;font-style:italic;">Spring</span><span class="zh" style="font-size:.9rem;">春</span></div><ul>
+        <li>Pischna – Technical Studies for Piano</li>
+        <li>Czerny – 40 Études, Op. 299 Nos. 11 and 12</li>
+        <li>Bach – Two-Part Invention No. 4 in D minor, BWV 775</li>
+        <li>Bach – Two-Part Invention No. 12 in A major, BWV 783</li>
+        <li>Bach – Three-Part Invention No. 4 in D minor, BWV 790</li>
+        <li>Beethoven – Piano Sonata No. 10 in G major, Op. 14 No. 2</li>
+        <li>Moszkowski – 20 Little Études, Op. 91 Nos. 7 and 14</li>
+        <li>Scarlatti – Sonata in D minor, K. 1</li>
+        <li>Scarlatti – Sonata in C major, K. 159</li>
+        <li>Mozart – Piano Sonata in B-flat major, K. 281</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="rep-foot">
+  <p class="en">Repertoire includes works studied, prepared and performed. Formal recital history is listed separately where dates are documented. Works currently being prepared are identified separately and are not presented as completed performance repertoire.</p>
+  <p class="zh">曲目包含已研習、準備及演出之作品。正式演出紀錄僅列出有日期可考者；準備中的作品另行標示，不視為已完成演出之曲目。</p>
+</section>
+
+</main>
+
+<!-- ===================== PERFORMANCES ===================== -->
+<main id="page-performances" class="page subpage">
+
+<section class="timeline">
+  <div class="timeline-inner">
+    <div class="section-label reveal"><span class="en">Performance Record</span><span class="zh">演出紀錄</span></div>
+    <h2 class="reveal"><span class="en">Selected<br><em>Timeline</em></span><span class="zh">演出<em>紀錄</em></span></h2>
+    <div class="tl-items">
+      <div class="tl-item reveal">
+        <span class="tl-tag en">Collaboration</span><span class="tl-tag zh">合作創作</span>
+        <div class="tl-yr">2026 · London, UK</div>
+        <div class="tl-title">Bloomsbury Festival — Threading Organisms 3.0</div>
+        <div class="tl-detail en">Original music created for a project combining textile art, dance and performance, in collaboration with artist Tere Chad, other artists and a contemporary composer, and with icandance, a charity supporting disabled children and young people through creative expression.</div>
+        <div class="tl-detail zh">與藝術家 Tere Chad、其他藝術家及當代作曲家合作創作原創音樂，結合紡織藝術、舞蹈與表演，並與透過創意表達支持身心障礙兒童及青少年的慈善機構 icandance 合作。</div>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-tag en">Ballet</span><span class="tl-tag zh">芭蕾</span>
+        <div class="tl-yr">2025 · Prague, Czech Republic</div>
+        <div class="tl-title">Národní Divadlo — Summer Workshop</div>
+        <div class="tl-detail en">Summer workshop with Czech National Ballet principal dancers. Ballet accompaniment as pianist-intern.</div>
+        <div class="tl-detail zh">與捷克國家芭蕾首席舞者暑期工作坊，擔任芭蕾伴奏實習鋼琴家。</div>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-tag en">Community</span><span class="tl-tag zh">公益</span>
+        <div class="tl-yr">2025 · Taipei, Taiwan</div>
+        <div class="tl-title">NTU Cancer Center · NTU Hospital · Yangfore Hospital</div>
+        <div class="tl-detail en">Piano performances at NTU Cancer Center (April), NTU Hospital main campus (October), and Yangfore Hospital (March).</div>
+        <div class="tl-detail zh">於台大醫院癌症中心（4月）、台大醫院總院（10月）及元附醫院（3月）演出公益音樂會。</div>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-tag en">Performance</span><span class="tl-tag zh">演出</span>
+        <div class="tl-yr">2024 · Los Angeles, USA</div>
+        <div class="tl-title">Arcadia Music Center</div>
+        <div class="tl-detail en">Chamber music performance (cello ensemble); collaborative pianist for the San Gabriel Valley Children's Chorus.</div>
+        <div class="tl-detail zh">室內樂（大提琴合奏）演出；擔任南加州兒童合唱團鋼琴合作。</div>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-tag en">Community</span><span class="tl-tag zh">公益</span>
+        <div class="tl-yr">2024 · Taipei, Taiwan</div>
+        <div class="tl-title en">Leofoo Village — Equal Home Baby Charity Association Dream Project</div>
+        <div class="tl-title zh" style="font-family:'Noto Serif TC',serif;font-weight:200;">六福村 — 社團法人中華民國等家寶寶社會福利協會圓夢計劃</div>
+        <div class="tl-detail en">Directed and accompanied orphanage students in a charity concert at Leofoo Village Theme Park, in partnership with the Equal Home Baby Charity Association Dream Project.</div>
+        <div class="tl-detail zh">與<span style="font-family:'Noto Serif TC',serif;font-weight:200;">社團法人中華民國等家寶寶社會福利協會</span>進行圓夢計劃合作，指導並陪同育幼院學生於六福村主題樂園演出公益音樂會。</div>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-tag en">Ballet</span><span class="tl-tag zh">芭蕾</span>
+        <div class="tl-yr">2024 · Taichung, Taiwan</div>
+        <div class="tl-title">National Taichung Theater — Sleeping Beauty Ballet Music Workshop</div>
+        <div class="tl-detail en">Music collaboration instructor-intern at the FEBMCA Tchaikovsky Sleeping Beauty Workshop, Oct 10–11.</div>
+        <div class="tl-detail zh">福爾摩沙芭蕾教育協會主辦柴可夫斯基《睡美人》芭蕾音樂工作坊，擔任音樂合作實習講師（10月10–11日）。</div>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-tag en">Jazz</span><span class="tl-tag zh">爵士</span>
+        <div class="tl-yr">2024 · Taipei, Taiwan</div>
+        <div class="tl-title">Fu Jen Jazz Festival — Fu Jen Catholic University</div>
+        <div class="tl-detail en">Clarinet soloist with the Fu Jen Jazz Orchestra.</div>
+        <div class="tl-detail zh">擔任輔仁爵士樂團單簧管獨奏，輔仁爵士音樂節。</div>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-tag en">International</span><span class="tl-tag zh">國際</span>
+        <div class="tl-yr">2023 · Noto, Sicily, Italy</div>
+        <div class="tl-title">Sicily International Piano &amp; Vocal Festival</div>
+        <div class="tl-detail en">Piano solo and vocal collaboration at Palazzo Nicolaci di Villadorata, Chiesa di Santa Chiara, and Palazzo Trigona Sala Gagliardi.</div>
+        <div class="tl-detail zh">於尼可拉奇宮、聖基亞拉教堂及特里戈納宮加列亞迪廳演出鋼琴獨奏及聲樂合作。</div>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-tag en">Taiwan</span><span class="tl-tag zh">台灣</span>
+        <div class="tl-yr">1998–Present · Taiwan</div>
+        <div class="tl-title">National Concert Hall · City Government Theatre · Taipei City Council</div>
+        <div class="tl-detail en">Ongoing performances at Taiwan's principal venues — National Concert Hall, National Theatre, Taipei City Government Theatre, Taipei City Council, Eslite Performance Hall, City Stage, Xinzhuang Arts Center.</div>
+        <div class="tl-detail zh">持續於國家音樂廳、國家戲劇院、台北市政府親子劇場、台北市議會演藝廳、誠品表演廳、城市舞台、新莊藝文中心等場館演出。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== TEACHING ===================== -->
+<main id="page-teaching" class="page subpage">
+
+<section class="teaching">
+  <div class="teaching-inner">
+    <div class="section-label reveal"><span class="en">Teaching</span><span class="zh">教學</span></div>
+    <h2 class="reveal"><span class="en">Piano <em>Lessons</em></span><span class="zh">鋼琴 <em>課程</em></span></h2>
+    <p class="teaching-lead reveal en">Music is not only for exams. The goal is to give every student something that stays long after the lesson ends — the depth and a genuine joy and love of music.</p>
+    <p class="teaching-lead reveal zh">音樂不只是為了考試。每堂課的目標，是讓學生帶走比樂譜更持久的東西——底蘊以及對音樂真正的享受與喜愛。</p>
+    <div class="feat-grid">
+      <div class="feat reveal">
+        <span class="feat-icon">🎹</span>
+        <div class="feat-title en">Personalised Approach</div><div class="feat-title zh">個人化教學</div>
+        <div class="feat-text en">Curriculum shaped around each student's level, age, and goals — the lesson follows the learner, not a fixed syllabus.</div>
+        <div class="feat-text zh">依照每位學生的程度、年齡與目標量身設計，以學習者為核心。</div>
+      </div>
+      <div class="feat reveal">
+        <span class="feat-icon">🌍</span>
+        <div class="feat-title en">International Experience</div><div class="feat-title zh">國際教學背景</div>
+        <div class="feat-text en">Has taught at Rising Star Academy (California College of Music, Los Angeles) and with students from TAS, TES, and Kang Chiao. Lessons available in English or Mandarin.</div>
+        <div class="feat-text zh">曾任教於洛杉磯加州音樂學院 Rising Star Academy，並指導 TAS、TES、康橋國際學校學生。中英文授課皆可。</div>
+      </div>
+      <div class="feat reveal">
+        <span class="feat-icon">🏆</span>
+        <div class="feat-title en">Competition &amp; Performance</div><div class="feat-title zh">比賽與演出指導</div>
+        <div class="feat-text en">Students have placed in the Taipei City Music Competition and school competitions. Experienced in recitals, ABRSM preparation, and audition coaching.</div>
+        <div class="feat-text zh">學生曾獲台北市音樂比賽第二名、校內音樂比賽等獎項。具豐富發表會、英皇檢定及比賽準備指導經驗。</div>
+      </div>
+      <div class="feat reveal">
+        <span class="feat-icon">✨</span>
+        <div class="feat-title en">All Levels Welcome</div><div class="feat-title zh">各程度皆歡迎</div>
+        <div class="feat-text en">Complete beginners to advanced students, children to adults. The first lesson is about understanding you and where you want to go.</div>
+        <div class="feat-text zh">從零基礎到進階學生，兒童至成人皆歡迎。第一堂課是為了了解你與你想去的方向。</div>
+      </div>
+    </div>
+    <div class="inst-list reveal">
+      <div class="inst-item">
+        <div><div class="inst-name">Gravity Ballet Taipei</div><div class="inst-sub en">Taipei · Ballet Pianist</div><div class="inst-sub zh">台北 · 芭蕾課程鋼琴家</div></div>
+        <div class="inst-yr">2025–2026</div>
+      </div>
+      <div class="inst-item">
+        <div><div class="inst-name">Formosa Ballet &amp; Music Collaboration Association</div><div class="inst-sub en">Taiwan · Ballet Music Collaboration Instructor</div><div class="inst-sub zh">台灣 · 芭蕾音樂合作講師</div></div>
+        <div class="inst-yr">2023–Present</div>
+      </div>
+      <div class="inst-item">
+        <div><div class="inst-name">Violetta Music &amp; Art — Private Studio</div><div class="inst-sub en">Taipei · Piano Instructor</div><div class="inst-sub zh">台北 · 鋼琴個別課程</div></div>
+        <div class="inst-yr">2016–Present</div>
+      </div>
+      <div class="inst-item">
+        <div><div class="inst-name">Rising Star Academy — California College of Music</div><div class="inst-sub en">Los Angeles, USA · Piano Instructor &amp; Collaborative Pianist</div><div class="inst-sub zh">美國洛杉磯 · 鋼琴講師暨音樂合作</div></div>
+        <div class="inst-yr">2024</div>
+      </div>
+      <div class="inst-item">
+        <div><div class="inst-name">San Gabriel Valley Children's Chorus</div><div class="inst-sub en">Los Angeles, USA · Collaborative Pianist &amp; Teaching Assistant</div><div class="inst-sub zh">美國洛杉磯 · 鋼琴合作暨助教</div></div>
+        <div class="inst-yr">2024</div>
+      </div>
+      <div class="inst-item">
+        <div><div class="inst-name">Taipei Fuhsing Private School</div><div class="inst-sub en">Taipei · Music Teacher</div><div class="inst-sub zh">台北私立復興實驗中小學 · 音樂教師</div></div>
+        <div class="inst-yr">2018–2019</div>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;">
+      <a href="#/contact" class="btn-wine"><span class="en">Inquire About Lessons</span><span class="zh">課程諮詢</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== CONTACT ===================== -->
+<main id="page-contact" class="page subpage">
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <div class="section-label"><span class="en">Contact</span><span class="zh">聯繫</span></div>
+      <h2>Let's<br><em>Connect</em></h2>
+      <p class="en">Piano lessons, ballet music collaboration, or performance enquiries — all welcome.</p>
+      <p class="zh">鋼琴課程諮詢、芭蕾音樂合作，或演出邀約，歡迎聯繫。</p>
+      <div class="contact-links">
+        <a href="https://lin.ee/TDhGqSvS" target="_blank" rel="noopener" class="contact-link-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M17 12c0-2.76-2.69-5-6-5s-6 2.24-6 5c0 2.47 2.19 4.54 5.15 4.93.2.04.47.13.54.3.06.15.04.39.02.54l-.09.52c-.03.16-.12.61.54.33.65-.28 3.52-2.07 4.8-3.54C16.61 14.3 17 13.21 17 12z"/></svg>
+          <span class="en">LINE</span><span class="zh">LINE 聯繫</span>
+        </a>
+        <a href="mailto:musevioletta@gmail.com" class="contact-link-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          musevioletta@gmail.com
+        </a>
+        <a href="https://m.youtube.com/@violetta_worldofart" target="_blank" rel="noopener" class="contact-link-item">
+          <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M21.8 8s-.2-1.4-.8-2a2.9 2.9 0 0 0-2-.8C17 5 12 5 12 5s-5 0-7 .2a2.9 2.9 0 0 0-2 .8C2.4 6.6 2.2 8 2.2 8S2 9.6 2 11.2v1.5c0 1.6.2 3.2.2 3.2s.2 1.4.8 2a3 3 0 0 0 2 .8C7 19 12 19 12 19s5 0 7-.2a3 3 0 0 0 2-.8c.6-.7.8-2 .8-2s.2-1.6.2-3.2v-1.5C22 9.6 21.8 8 21.8 8zM10 15V9l5.2 3-5.2 3z"/></svg>
+          YouTube
+        </a>
+      </div>
+    </div>
+    <div class="reveal">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_replyto" value="musevioletta@gmail.com">
+        <input type="hidden" name="_subject" value="New enquiry — Violetta Yeh">
+        <div class="form-group">
+          <label class="form-label en" for="f-name">Name</label>
+          <label class="form-label zh" for="f-name">姓名</label>
+          <input class="form-input" type="text" id="f-name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row" style="gap:2px;">
+          <div class="form-group">
+            <label class="form-label en" for="f-email">Email *</label>
+            <label class="form-label zh" for="f-email">電子郵件 *</label>
+            <input class="form-input" type="email" id="f-email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label en" for="f-phone">Phone</label>
+            <label class="form-label zh" for="f-phone">電話</label>
+            <input class="form-input" type="tel" id="f-phone" name="phone" placeholder="+44...">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label en" for="f-msg">Comment</label>
+          <label class="form-label zh" for="f-msg">留言</label>
+          <textarea class="form-textarea" id="f-msg" name="message" placeholder="Piano lessons, collaboration, or performance enquiry..."></textarea>
+        </div>
+        <button type="submit" class="btn-wine" style="width:100%;margin-top:2px;">
+          <span class="en">Send</span><span class="zh">送出</span>
+        </button>
+        <div class="form-status en" id="fStatusEn"></div>
+        <div class="form-status zh" id="fStatusZh"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span>© 2026 Violetta Yeh</span>
+  <span>Pianist · Collaborative Artist · Educator</span>
+  <span>London · Paris</span>
+</footer>
+
+<script>
+/* Language toggle */
+const body=document.body,langBtn=document.getElementById('langBtn');
+langBtn.addEventListener('click',()=>{
+  if(body.classList.contains('lang-en')){body.classList.replace('lang-en','lang-zh');body.setAttribute('lang','zh-TW');langBtn.textContent='EN';}
+  else{body.classList.replace('lang-zh','lang-en');body.setAttribute('lang','en');langBtn.textContent='中文';}
+});
+
+/* Page routing (hash-based, GitHub Pages friendly) */
+const PAGES=['home','about','repertoire','performances','teaching','contact'];
+const pageEls={};PAGES.forEach(p=>pageEls[p]=document.getElementById('page-'+p));
+const menuBtn=document.getElementById('menuBtn'),menuOverlay=document.getElementById('menuOverlay');
+function closeMenu(){menuOverlay.classList.remove('open');body.classList.remove('menu-open');}
+menuBtn.addEventListener('click',()=>{menuOverlay.classList.toggle('open');body.classList.toggle('menu-open');});
+function readHash(){
+  const h=(location.hash||'').replace(/^#\/?/,'').split('?')[0];
+  return pageEls[h]?h:'home';
+}
+function show(name){
+  PAGES.forEach(p=>pageEls[p].classList.toggle('active',p===name));
+  document.querySelectorAll('[data-route]').forEach(a=>a.classList.toggle('current',a.dataset.route===name));
+  closeMenu();
+  window.scrollTo({top:0,behavior:'instant'});
+}
+function go(name){
+  show(name);
+  try{if(location.hash!=='#/'+name)history.pushState(null,'','#/'+name);}catch(e){}
+}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#/"]');
+  if(!a)return;
+  e.preventDefault();
+  go(a.getAttribute('href').slice(2));
+});
+window.addEventListener('hashchange',()=>show(readHash()));
+window.addEventListener('popstate',()=>show(readHash()));
+show(readHash());
+
+/* In-page jump buttons (repertoire) */
+document.querySelectorAll('[data-goto]').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const t=document.getElementById(b.dataset.goto);
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+});
+
+/* Portrait: try common file names so a case or extension mismatch still works */
+(function(){
+  const img=document.getElementById('portrait');if(!img)return;
+  const names=['portrait.png','Portrait.png','portrait.PNG','portrait.jpg','portrait.jpeg','portrait.webp','images/portrait.png','images/portrait.jpg'];
+  let i=0,tried=false;
+  function giveUp(){img.style.display='none';}
+  function discover(){
+    tried=true;
+    const host=location.hostname;
+    if(!/github\.io$/.test(host))return giveUp();
+    const owner=host.split('.')[0],seg=location.pathname.split('/')[1];
+    const repo=(seg&&seg.indexOf('.')===-1)?seg:host;
+    fetch('https://api.github.com/repos/'+owner+'/'+repo+'/contents/')
+      .then(r=>r.ok?r.json():Promise.reject())
+      .then(list=>{
+        const f=list.find(x=>x.type==='file'&&/\.(png|jpe?g|webp)$/i.test(x.name)&&!/favicon/i.test(x.name));
+        if(f)img.src=encodeURIComponent(f.name);else giveUp();
+      }).catch(giveUp);
+  }
+  img.addEventListener('error',()=>{i++;if(i<names.length){img.src=names[i];}else if(!tried){discover();}else{giveUp();}});
+  img.src=names[0];
+})();
+
+/* Contact form */
+const form=document.getElementById('contactForm');
+const stEn=document.getElementById('fStatusEn'),stZh=document.getElementById('fStatusZh');
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  try{
+    const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    if(r.ok){form.reset();stEn.textContent='Your message has been sent. I\'ll be in touch soon.';stZh.textContent='訊息已送出，我會盡快回覆您。';stEn.className='form-status en show';stZh.className='form-status zh show';}
+    else throw new Error();
+  }catch{stEn.textContent='Something went wrong. Please email musevioletta@gmail.com directly.';stZh.textContent='發送失敗，請直接寄信至 musevioletta@gmail.com';stEn.className='form-status en show err';stZh.className='form-status zh show err';}
+});
+
+/* Custom cursor */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},80);
+});
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{ring.style.transform='translate(-50%,-50%) scale(2)';ring.style.opacity='.3';});
+  el.addEventListener('mouseleave',()=>{ring.style.transform='translate(-50%,-50%) scale(1)';ring.style.opacity='.6';});
+});
+
+/* Reveal on scroll */
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),80);io.unobserve(e.target);}});
+},{threshold:.08,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* Nav background on scroll */
+window.addEventListener('scroll',()=>{
+  const nav=document.querySelector('nav');
+  if(window.scrollY>70){nav.style.background='rgba(26,16,8,.97)';nav.style.backdropFilter='blur(12px)';}
+  else{nav.style.background='';nav.style.backdropFilter='';}
+});
+</script>
+</body>
+</html>
